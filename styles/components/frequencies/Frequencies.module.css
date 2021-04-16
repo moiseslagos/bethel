@@ -1,0 +1,43 @@
+.formTag{
+    border:1px solid white;
+    padding: 0.8rem 1rem;
+    background: inherit;
+    color: white;
+    width: 100%;
+    display: flex;
+    font-weight: bold;
+    border-radius: 20px;
+    outline: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+    position: relative;
+    background:url('/images/ico/arrow-down.svg');
+    background-position: 95% center;
+    background-repeat: no-repeat;
+}
+.formTag option {
+    margin: 40px;
+    background: #212121;
+    color: #fff;
+}
+.tableFrecuencies{
+    width: 100%;
+    margin:1rem 0;
+    border-collapse: collapse;
+}
+.tableFrecuencies thead{
+    text-align: left;
+}
+.tableFrecuencies thead td,
+.tableFrecuencies thead th{
+    padding: 0 0.4rem;
+}
+.tableFrecuencies tbody td,
+.tableFrecuencies tbody th {
+    text-align: left;
+    padding: 1rem 0.4rem;
+}
+.tableFrecuencies tbody tr:nth-child(even) {
+    background-color: #2E2E2E;
+}

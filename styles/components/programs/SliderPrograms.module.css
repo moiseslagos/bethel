@@ -1,0 +1,18 @@
+.carouselProgram ul{
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.carouselProgramItem{
+    display: inline-flex;
+    flex-direction: column;
+    width: 135px;
+    padding: 0.5rem;
+    white-space: normal;
+}
+.carouselProgramItem img{
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}

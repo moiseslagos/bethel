@@ -1,0 +1,34 @@
+html,
+body {
+  background: #212121;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+button{
+  background: inherit;
+  border: 0;
+  padding: 0;
+}
+h2.title{
+  font-size: 1.2em;
+}
+section.blockSection{
+  margin-bottom: 2rem;
+}
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+}

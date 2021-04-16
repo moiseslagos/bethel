@@ -1,5 +1,5 @@
-import { programs } from 'data/programs'
+import { dataPrograms } from 'data/programs'
 
 export default function handler (req, res) {
-  res.status(200).json(programs)
+  res.status(200).json(dataPrograms)
 }

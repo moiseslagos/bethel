@@ -33,6 +33,7 @@
 .playerControlsTogglePausePlay{
   width: 60px;
   height: 60px;
+  outline: none;
 }
 
 .playerEqualizer{
@@ -52,7 +53,7 @@
   margin:0px 2px;
   transition: 1s;
 }
-.playerEqualizer.active span{
+.playerEqualizerActive span{
   height: 100%;
   transition: 1s;
   animation: equalize 4s 0s infinite;

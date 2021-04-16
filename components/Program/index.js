@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import styles from 'styles/components/programs/SliderPrograms.module.css'
 
-export default function Programas ({ programs }) {
+export default function Program ({ programs }) {
   const [lists] = useState(programs)
 
   return (

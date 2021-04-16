@@ -1,4 +1,4 @@
-import AppStore from 'components/Icons/Appstore'
+import AppStore from 'components/Icons/AppStore'
 import Email from 'components/Icons/Email'
 import GooglePlay from 'components/Icons/GooglePlay'
 

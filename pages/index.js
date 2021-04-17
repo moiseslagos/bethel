@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic'
 
 import { dataPrograms } from 'data/programs'
 import { dataFrequencies } from 'data/frequencies'
+import { dataShedule } from 'data/schedule'
+import { getDate } from 'lib/getDate'
 
 import styles from 'styles/Home.module.css'
 
@@ -18,6 +20,7 @@ const DynamicComponentWithNoSSR = dynamic(
 )
 
 export default function Home ({ dataPrograms, dataFrequencies }) {
+  console.log(getDate())
   return (
     <div className={styles.container}>
       <Head>
@@ -27,8 +30,8 @@ export default function Home ({ dataPrograms, dataFrequencies }) {
       {/* <!--player--> */}
       <DynamicComponentWithNoSSR path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
+      <Header />
       <main className={styles.main}>
-        <Header />
         {/* <!--Slider--> */}
         <Slider />
         {/* <!--Slider--> */}
@@ -46,7 +49,8 @@ export async function getStaticProps () {
   return {
     props: {
       dataPrograms,
-      dataFrequencies
+      dataFrequencies,
+      dataShedule
     }
   }
 }

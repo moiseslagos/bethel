@@ -32,3 +32,12 @@ section.blockSection{
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5rem;
 }
+.auto-scroll ul {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.wrapper-content{
+  padding: 0rem 0.8rem;
+}

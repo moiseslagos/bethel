@@ -5,8 +5,9 @@
     color: white;
     width: 100%;
     display: flex;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 30px;
     outline: none;
     -moz-appearance:none;
     -webkit-appearance:none;

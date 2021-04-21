@@ -19,7 +19,7 @@ const DynamicComponentWithNoSSR = dynamic(
   { ssr: false }
 )
 
-export default function Home ({ dataPrograms, dataFrequencies }) {
+export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
   console.log(getDate())
   return (
     <div className={styles.container}>
@@ -30,7 +30,7 @@ export default function Home ({ dataPrograms, dataFrequencies }) {
       {/* <!--player--> */}
       <DynamicComponentWithNoSSR path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
-      <Header />
+      <Header days={getDate()} shedule={dataShedule} />
       <main className={styles.main}>
         {/* <!--Slider--> */}
         <Slider />

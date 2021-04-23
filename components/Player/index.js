@@ -17,12 +17,22 @@ const Player = ({ path, shedule, days }) => {
     setAudio(new Audio(path))
   }, [])
   const handlePlayer = () => {
-    if (play) {
-      audio.pause()
-      setPlay(false)
-    } else {
-      audio.play()
+    audio.onplay = () => {
+      console.log("el audio empezó a sonar")
       setPlay(true)
+    }
+    audio.onerror = (e) => {
+      console.log('el audio tiene errores: '+e)
+    }
+    audio.onpause = () => {
+      console.log('el audio se pausó')
+      setPlay(false)
+    }
+    setShowModalPlayer(false)
+    if (play) {      
+      audio.pause()      
+    } else {
+      audio.play()      
     }
   }
   const closeModalPlayer = () =>{

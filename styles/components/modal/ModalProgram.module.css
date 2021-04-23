@@ -9,15 +9,21 @@
     overflow-y: auto;
     background: #212121;
     padding: 0.5rem 0 5rem 0;
-    animation:all ease 400s;
 }
 .modalActive{
-    animation:all ease 400s;
+    animation:activeModal ease 400ms;
     left: 0%;
 }
-@keyframes showModal {
+.modalDesactive{
+    animation:desactiveModal ease 400ms;
+}
+@keyframes activeModal {
     from {left: -100%;}
     to {left: 0;}
+}
+@keyframes desactiveModal {
+    from {left: 0;}
+    to {left: -100%;}
 }
 .listDaysItem{
     display: inline-block;

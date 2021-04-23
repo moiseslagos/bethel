@@ -28,7 +28,7 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
     setListShedule(shedule[day])
   }
   return (
-    <div className={`${styles.modal}  ${showModal ? styles.modalActive : ''}`}>
+    <div className={`${styles.modal}  ${showModal ? styles.modalActive : styles.modalDesactive}`}>
       <button onClick={()=>closeModal(false)} className={styles.btnClose}><Close /></button>
 
       <div className="modaBody">        

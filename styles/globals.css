@@ -48,3 +48,23 @@ ul{
 .wrapper-content{
   padding: 0rem 0.8rem;
 }
+
+.btnBethel{
+  padding: 0.7rem 0.5rem;
+  font-weight: normal;
+}
+.btnFirst{
+  background: white;
+  color: black;
+}
+.btnSecond{
+  background: #212121;
+  color: white;
+}
+.btnRounded{
+  border-radius:40rem;
+}
+
+.txt-center{
+  text-align: center;
+}

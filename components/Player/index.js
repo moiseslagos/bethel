@@ -2,13 +2,18 @@ import { useState, useEffect } from 'react'
 
 import Play from 'components/Icons/Play'
 import Pause from 'components/Icons/Pause'
+import ModalPlayer from 'components/ModalPlayer'
 
 import styles from 'styles/player/Player.module.css'
 
-const Player = ({ path }) => {
+const Player = ({ path, shedule, days }) => {
   const [play, setPlay] = useState(false)
   const [audio, setAudio] = useState(null)
+  const [listShedule, setShedule] = useState(shedule)
+  const [showModalPlayer, setShowModalPlayer] = useState(false)
+
   useEffect(() => {
+    setShowModalPlayer(true)
     setAudio(new Audio(path))
   }, [])
   const handlePlayer = () => {
@@ -20,11 +25,34 @@ const Player = ({ path }) => {
       setPlay(true)
     }
   }
+  const closeModalPlayer = () =>{
+    setShowModalPlayer(false)
+  }
   return (
+    <>
+    {
+      showModalPlayer ? <ModalPlayer reproducir={handlePlayer} closeModalPlayer={closeModalPlayer} />: ''
+    }    
     <div className={`${styles.playerFixed} ${styles.player}`}>
       <div className={styles.playerSocial}></div>
       <div className={styles.playerProgram}>
-        <div className={styles.playerProgramTitle}>La Hora de la Transformación</div>
+        <div className={styles.playerProgramTitle}>
+          {
+            Object.entries(listShedule[days.day.toLowerCase()]).map(([key, value], index) => {
+              if(key.slice(0,2) == days.hours){
+                if(days.minuts > 0 && days.minuts < 30){
+                  if(key.slice(3,5)=='00'){
+                    return value.title
+                  }
+                }else{
+                  if(key.slice(3,5)=='30'){
+                    return value.title
+                  }
+                }
+              }  
+            })
+          }      
+        </div>
       </div>
       <div className={styles.playerControls}>
         {/* <audio src="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream" autoPlay></audio> */}
@@ -36,6 +64,7 @@ const Player = ({ path }) => {
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
     </div>
+    </>
   )
 }
 export default Player

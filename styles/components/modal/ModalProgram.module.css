@@ -83,10 +83,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 0, 0,0.5);
     border-radius: 50%;
     position: absolute;
     right: 0.5rem;

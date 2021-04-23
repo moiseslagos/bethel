@@ -20,7 +20,6 @@ const DynamicComponentWithNoSSR = dynamic(
 )
 
 export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
-  console.log(getDate())
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +27,7 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <!--player--> */}
-      <DynamicComponentWithNoSSR path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
+      <DynamicComponentWithNoSSR shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
       <Header days={getDate()} shedule={dataShedule} />
       <main className={styles.main}>

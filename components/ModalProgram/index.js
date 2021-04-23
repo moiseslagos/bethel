@@ -7,6 +7,7 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
   const [showModal, setShowModal] = useState(setModal)
   const [listShedule, setListShedule] = useState([])
   const [sonando, setSonando] = useState('')
+  const [showSonando, setShowSonando] = useState(true)
   const [activeDay, setActiveDay] = useState(days.day)
   useEffect( ()=>{
     setShowModal(setModal)
@@ -22,6 +23,7 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
   },[])
   const handleClickDay = (e)=>{
     const day = e.toLowerCase()
+    e===days.day ? setShowSonando(true) : setShowSonando(false)
     setActiveDay(e);
     setListShedule(shedule[day])
   }
@@ -58,9 +60,9 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
                   return ( <div key={`am-${index}`} className={styles.blockShedule}>
                     <div className={styles.timer}>{key}</div>
                     <div className={styles.title}>
-                      { key.slice(0,2) == days.hours ? 
+                      { showSonando ? key.slice(0,2) == days.hours ? 
                           (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                        '' 
+                        '': ''
                       }                      
                       <p>{value.title}</p>
                     </div>
@@ -79,9 +81,9 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
                   return ( <div key={`pm-${index}`} className={styles.blockShedule}>
                     <div className={styles.timer}>{key}</div>
                     <div className={styles.title}>
-                      { key.slice(0,2) == days.hours ? 
+                      { showSonando ? key.slice(0,2) == days.hours ? 
                           (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                        '' 
+                        '': ''
                       }
                       <p>{value.title}</p>
                     </div>

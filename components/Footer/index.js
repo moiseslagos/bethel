@@ -24,8 +24,8 @@ export default function Footer () {
         <div className={styles.blockFooter}>
           <h2>Descargar Gratis</h2>
           <div className="grid-2 storeSvg">
-            <a href="#" target="_blank"><AppStore height="50" className={styles.svgStore}/></a>
-            <a href="#" target="_blank"><GooglePlay height="60" className={styles.svgStore}/></a>
+            <a href="#" target="_blank"><AppStore height="51" className={styles.svgStore}/></a>
+            <a href="#" target="_blank"><GooglePlay height="51" className={styles.svgStore}/></a>
           </div>
         </div>
     </footer>

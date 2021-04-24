@@ -175,10 +175,12 @@
   }
   .playerProgram{
     height: 80%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
   }
   .playerProgramTitle{
     transform: rotate(-90deg);
-    width: 100%;
     white-space: nowrap;
   }
   .playerSocial{

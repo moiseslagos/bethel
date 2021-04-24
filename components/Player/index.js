@@ -7,9 +7,14 @@ import ModalPlayer from 'components/ModalPlayer'
 import styles from 'styles/player/Player.module.css'
 
 const Player = ({ path, shedule, days }) => {
+  const formatDay = (day) =>{
+    const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
+    const daySplit = day.split('').map( letra => acentos[letra] || letra).join('').toString();
+    return daySplit.toLowerCase();
+  }
   const [play, setPlay] = useState(false)
   const [audio, setAudio] = useState(null)
-  const [listShedule, setShedule] = useState(shedule)
+  const [listShedule, setShedule] = useState(shedule[formatDay(days.day)])
   const [showModalPlayer, setShowModalPlayer] = useState(false)
 
   useEffect(() => {
@@ -48,7 +53,7 @@ const Player = ({ path, shedule, days }) => {
       <div className={styles.playerProgram}>
         <div className={styles.playerProgramTitle}>
           {
-            Object.entries(listShedule[days.day.toLowerCase()]).map(([key, value], index) => {
+            listShedule && Object.entries(listShedule).map(([key, value], index) => {
               if(key.slice(0,2) == days.hours){
                 if(days.minuts > 0 && days.minuts < 30){
                   if(key.slice(3,5)=='00'){

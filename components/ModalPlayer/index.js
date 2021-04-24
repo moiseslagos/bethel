@@ -12,10 +12,14 @@ export default function ModalPlayer ({reproducir,closeModalPlayer}) {
 						Para que disfrutes de nuestra emisora, te recomendamos que hagas clic en aceptar y escucharás toda nuestra programación.
 					</p>
 				</div>
-				<div className="modalPlayerFooter">
+				<div className={styles.modalPlayerFooter}>
 					<div className="grid-2">
-						<button onClick={reproducir} className="btnBethel btnFirst btnRounded">Sí, escuchar radio</button>
+						<div className="text-center">
+						<button onClick={reproducir} className="btnBethel btnFirst btnRounded">Sí, escuchar</button>
+						</div>
+						<div className="text-center">
 						<button onClick={closeModalPlayer} className="btnBethel btnSecond btnRounded">No, gracias</button>
+						</div>
 					</div>
 				</div>
 			</div>

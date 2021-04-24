@@ -9,34 +9,38 @@ export default function Frequencies ({ frequencies }) {
     setListFrequencies(frequencies[departament])
   }
   return (
-    <section className="blockSection">
-      <h2 className="title">Nuestras Frecuencias</h2>
-      <h4>Seleccione su departamento</h4>
-      <select className={styles.formTag} onChange={handleSelectChange}>
-        <option value="lima">Lima</option>
-        <option value="amazonas">Amazonas</option>
-        <option value="ancash">Ancash</option>
-        <option value="apurimac">Apurímac</option>
-        <option value="arequipa">Arequipa</option>
-        <option value="ayacucho">Ayacucho</option>
-        <option value="cajamarca">Cajamarca</option>
-        <option value="cusco">Cusco</option>
-        <option value="huancavelica">Huancavelica</option>
-        <option value="huanuco">Huánuco</option>
-        <option value="ica">Ica</option>
-        <option value="junin">Junín</option>
-        <option value="la_libertad">La Libertad</option>
-        <option value="lambayeque">Lambayeque</option>
-        <option value="loreto">Loreto</option>
-        <option value="madre_de_dios">Madre de Dios</option>
-        <option value="moquegua">Moquegua</option>
-        <option value="pasco">Pasco</option>
-        <option value="piura">Piura</option>
-        <option value="puno">Puno</option>
-        <option value="san_martin">San Martín</option>
-        <option value="tumbes">Tumbes</option>
-        <option value="ucayali">Ucayali</option>
-      </select>
+    <section className="blockSection wrapper-content">
+      <div className={styles.titleInline}>
+        <h2 className="title">Nuestras Frecuencias</h2>
+        <div className={styles.selectOptions}>
+          <h4>Seleccione su departamento</h4>
+          <select className={styles.formTag} onChange={handleSelectChange}>
+            <option value="lima">Lima</option>
+            <option value="amazonas">Amazonas</option>
+            <option value="ancash">Ancash</option>
+            <option value="apurimac">Apurímac</option>
+            <option value="arequipa">Arequipa</option>
+            <option value="ayacucho">Ayacucho</option>
+            <option value="cajamarca">Cajamarca</option>
+            <option value="cusco">Cusco</option>
+            <option value="huancavelica">Huancavelica</option>
+            <option value="huanuco">Huánuco</option>
+            <option value="ica">Ica</option>
+            <option value="junin">Junín</option>
+            <option value="la_libertad">La Libertad</option>
+            <option value="lambayeque">Lambayeque</option>
+            <option value="loreto">Loreto</option>
+            <option value="madre_de_dios">Madre de Dios</option>
+            <option value="moquegua">Moquegua</option>
+            <option value="pasco">Pasco</option>
+            <option value="piura">Piura</option>
+            <option value="puno">Puno</option>
+            <option value="san_martin">San Martín</option>
+            <option value="tumbes">Tumbes</option>
+            <option value="ucayali">Ucayali</option>
+          </select>
+        </div>
+      </div>
       <table className={styles.tableFrecuencies}>
         <thead >
           <tr>

@@ -8,7 +8,9 @@ export default function Program ({ programs }) {
 
   return (
     <section className="blockSection">
-      <h2 className="title">Nuestros programas</h2>
+      <div className="wrapper-content">
+        <h2 className="title">Nuestros programas</h2>
+      </div>
       <div className={styles.carouselProgram}>
         <ul>
         {

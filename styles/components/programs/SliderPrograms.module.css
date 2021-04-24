@@ -9,6 +9,7 @@
     flex-direction: column;
     width: 135px;
     padding: 0.5rem;
+    font-size: 0.8rem;
     white-space: normal;
 }
 .carouselProgramItem img{

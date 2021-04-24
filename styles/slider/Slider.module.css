@@ -1,10 +1,9 @@
 .bgSliderHeader{
-    display: block;
-    
+  display: block;
 }
 .sliderItem{
     position: relative;
-    padding-top: 5rem;
+    padding-top: 6rem;
 }
 .sliderItem img{
     width: 100%;
@@ -15,18 +14,20 @@
     z-index: 2;
 }
 .sliderItemDescription h2{
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 900;
 }
 .sliderItemDescription .subTitle{
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
 }
 .sliderItemShadow{
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 .sliderItemShadow::before{
     background: rgb(33,33,33);
@@ -39,4 +40,13 @@
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .sliderItemDescription h2{
+    font-size: 1.8rem;
+  }
+  .bgSliderHeader{
+    margin-bottom: 30px;
+  }
 }

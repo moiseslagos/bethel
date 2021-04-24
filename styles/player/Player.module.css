@@ -29,6 +29,8 @@
 
 .playerControls{
   background: #0D0D0D;
+  width: 60px;
+  height: 60px;
 }
 .playerControlsTogglePausePlay{
   width: 60px;
@@ -157,5 +159,31 @@
   }
   100% {
     height: 100%;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .playerFixed {
+    width: 64px;
+    top: 0;
+    bottom: inherit;
+    left: 0;
+    height: 100vh;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .playerProgram{
+    height: 80%;
+  }
+  .playerProgramTitle{
+    transform: rotate(-90deg);
+    width: 100%;
+    white-space: nowrap;
+  }
+  .playerSocial{
+    display: flex;
+    width: 60px;
+    height: 60px;
   }
 }

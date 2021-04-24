@@ -9,6 +9,7 @@ body {
 }
 body{
   font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
 }
 a {
   color: inherit;
@@ -46,7 +47,7 @@ ul{
   padding:0;
 }
 .wrapper-content{
-  padding: 0rem 0.8rem;
+  padding: 0rem 1.5rem;
 }
 
 .btnBethel{
@@ -67,4 +68,31 @@ ul{
 
 .txt-center{
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  button{
+    cursor: pointer;
+  }
+  .wrapper-desktop{
+    margin-left:64px;
+    position: relative;
+  }
+  .wrapper-content{
+    padding: 0;
+  }
+  .main-desk{
+    width: 80%;
+    margin: 0 auto;
+  }
+  section.blockSection{
+    z-index: 1
+  }
+  h2.title{
+    font-size: 1em;
+  }
+  .btnBethel{
+    padding: 0.5rem 0.8rem;
+    width: fit-content
+  }
 }

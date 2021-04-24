@@ -6,7 +6,7 @@ import styles from 'styles/footer/Footer.module.css'
 
 export default function Footer () {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} wrapper-content`}>
         <div className={styles.blockFooter}>
           <h2>Bethel Radio</h2>
           <p>Coordinación:</p>

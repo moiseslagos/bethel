@@ -33,3 +33,14 @@
 .btnClose svg{
 	width: 100%;
 }
+
+@media (min-width: 768px) {
+	.ModalPlayer{
+		width: 400px;
+	}
+	.modalPlayerFooter{
+		width: 70%;
+		margin: 0 auto;
+		text-align: center;
+	}
+}

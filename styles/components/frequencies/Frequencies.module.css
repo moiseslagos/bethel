@@ -42,3 +42,25 @@
 .tableFrecuencies tbody tr:nth-child(even) {
     background-color: #2E2E2E;
 }
+
+@media (min-width: 768px) {
+  .titleInline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .selectOptions{
+    display: flex;
+    align-items: center;
+  }
+  .selectOptions h4{
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+  }
+  .formTag{
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    height: 35px;
+  }
+}

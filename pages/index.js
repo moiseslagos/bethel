@@ -29,15 +29,19 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
       {/* <!--player--> */}
       <DynamicComponentWithNoSSR shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
-      <Header days={getDate()} shedule={dataShedule} />
-      <main className={styles.main}>
-        {/* <!--Slider--> */}
-        <Slider />
-        {/* <!--Slider--> */}
-        <Program programs={dataPrograms}/>
-        <Frequencies frequencies={dataFrequencies} />
-      </main>
-      <Footer />
+      <div className="wrapper-desktop">
+        <div className="main-desk">
+          <Header days={getDate()} shedule={dataShedule} />
+          <main className={`${styles.main}`}>
+            {/* <!--Slider--> */}
+            <Slider />
+            {/* <!--Slider--> */}
+            <Program programs={dataPrograms}/>
+            <Frequencies frequencies={dataFrequencies} />
+          </main>
+          <Footer />
+        </div>
+      </div>
     </div>
   )
 }

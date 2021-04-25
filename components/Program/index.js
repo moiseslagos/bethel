@@ -38,7 +38,7 @@ export default function Program ({ programs }) {
                 <li key={list.id} className={`${styles.carouselProgramItem} splide__slide`}>
                   <div className="image">
                     {/* <img src={`/images/${list.img}`} alt="Picture of the author"/> */}
-                    <Image src={`/images/${list.img}`} alt="Picture of the author" width={270} height={270} />
+                    <Image src={`/images/${list.img}`} alt={list.title} width={270} height={270} />
                   </div>
                   <div className="title">{list.title}</div>
                 </li>

@@ -42,10 +42,11 @@
   width: 60px;
   height: 60px;
   background: #212121;
-  padding: 10px 13px;
+  padding: 1rem 0.4rem;
   display: flex;
   justify-self: center;
   align-items: flex-end;
+  justify-content: center;
 }
 .playerEqualizer span{
   width: 2px;
@@ -185,7 +186,26 @@
   }
   .playerSocial{
     display: flex;
-    width: 60px;
-    height: 60px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #0d0d0d;
+    border-bottom: 2px solid #0d0d0d;
+  }
+  .playerSocial a{
+    display: flex;
+    width: 100%;
+    padding: 1.5em 0.7em;
+    justify-content: center;
+    transform: all ease 400ms;
+  }
+  .playerSocial a svg{
+    fill: white;
+  }
+  .playerSocial a:hover{
+    background: #212121;
+    transform: all ease 400ms;
+  }
+  .playerSocial a:hover svg{
+    fill: #c1c1c1;
   }
 }

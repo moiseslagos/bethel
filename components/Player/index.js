@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import Play from 'components/Icons/Play'
 import Pause from 'components/Icons/Pause'
 import ModalPlayer from 'components/ModalPlayer'
+import Facebook from 'components/Icons/Facebook'
+import Twitter from 'components/Icons/Twitter'
 
 import styles from 'styles/player/Player.module.css'
 
@@ -49,7 +51,10 @@ const Player = ({ path, shedule, days }) => {
       showModalPlayer ? <ModalPlayer reproducir={handlePlayer} closeModalPlayer={closeModalPlayer} />: ''
     }    
     <div className={`${styles.playerFixed} ${styles.player}`}>
-      <div className={styles.playerSocial}></div>
+      <div className={styles.playerSocial}>
+        <a href="https://www.facebook.com/bethelradio/"><Facebook height="15" /></a>
+        <a href="https://twitter.com/bethelradio?lang=es"><Twitter height="15" /></a>
+      </div>
       <div className={styles.playerProgram}>
         <div className={styles.playerProgramTitle}>
           {

@@ -52,8 +52,8 @@ const Player = ({ path, shedule, days }) => {
     }    
     <div className={`${styles.playerFixed} ${styles.player}`}>
       <div className={styles.playerSocial}>
-        <a href="https://www.facebook.com/bethelradio/"><Facebook height="15" /></a>
-        <a href="https://twitter.com/bethelradio?lang=es"><Twitter height="15" /></a>
+        <a href="https://www.facebook.com/bethelradio/" target="_blank" ><Facebook height="15" /></a>
+        <a href="https://twitter.com/bethelradio?lang=es" target="_blank" ><Twitter height="15" /></a>
       </div>
       <div className={styles.playerProgram}>
         <div className={styles.playerProgramTitle}>

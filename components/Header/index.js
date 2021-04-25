@@ -32,7 +32,7 @@ export default function Header ({days,shedule}) {
       <ModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={handleShedule} />
       <header className={styles.header}>
         <div className="logo">
-          <img src="/images/logo-bethel.svg"/>
+          <img src="/images/logo-bethel.svg" width="83" />
           <h1>Bethel Radio</h1>
         </div>
         <div className={styles.actionTop}> 

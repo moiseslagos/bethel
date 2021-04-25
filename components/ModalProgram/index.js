@@ -38,71 +38,74 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
     <div className={` ${styles.modal} ${showModal ? styles.modalActive : ''} `}>
       <button onClick={()=>closeModal(false)} className={styles.btnClose}><Close /></button>
 
-      <div className="modaBody">        
-        <div className="wrapper-content">
-          <h2 className="title">Programación</h2>
-          <h4>{`${days.day} ${days.date} de ${days.month}`}</h4>
-        </div>
-        <div className="auto-scroll">
-          <ul>
-            {
-              days.DAYS.map((value, index) => {
-                return (
-                  <li key={index} className={styles.listDaysItem}>
-                    <button type="button" onClick={()=>handleClickDay(value)} className={`${styles.btnListDay} ${activeDay == value ? styles.activeBtnListDay:'' }`}>{value}</button>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
-
-        <div className="md:grid-2 resultProgramming wrapper-content">
-
-          <div className={styles.programming}>
-            <h3 className={styles.amPm}>A.M.</h3>
-            {
-              listShedule && Object.entries(listShedule).map(([key, value], index) => {
-                if(key.slice(0,2) < 12){
-                  return ( <div key={`am-${index}`} className={styles.blockShedule}>
-                    <div className={styles.timer}>{key}</div>
-                    <div className={styles.title}>
-                      { showSonando ? key.slice(0,2) == days.hours ? 
-                          (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                        '': ''
-                      }                      
-                      <p>{value.title}</p>
-                    </div>
-                  </div>
-                  )
+      <div className="modaBody">
+        <div className="wrapper-desktop">
+          <div className="main-desk">
+            <div className="wrapper-content">
+              <h2 className="title">Programación</h2>
+              <h4>{`${days.day} ${days.date} de ${days.month}`}</h4>
+            </div>
+            <div className="auto-scroll">
+              <ul>
+                {
+                  days.DAYS.map((value, index) => {
+                    return (
+                      <li key={index} className={styles.listDaysItem}>
+                        <button type="button" onClick={()=>handleClickDay(value)} className={`${styles.btnListDay} ${activeDay == value ? styles.activeBtnListDay:'' }`}>{value}</button>
+                      </li>
+                    )
+                  })
                 }
-              })
-            }
-          </div>
+              </ul>
+            </div>
 
-          <div className={styles.programming}>
-            <h3 className={styles.amPm}>P.M.</h3>
-            {
-              listShedule && Object.entries(listShedule).map(([key, value], index) => {
-                if(key.slice(0,2) > 11){
-                  return ( <div key={`pm-${index}`} className={styles.blockShedule}>
-                    <div className={styles.timer}>{key}</div>
-                    <div className={styles.title}>
-                      { showSonando ? key.slice(0,2) == days.hours ? 
-                          (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                        '': ''
-                      }
-                      <p>{value.title}</p>
-                    </div>
-                  </div>
-                  )
+            <div className="md-grid-2 resultProgramming wrapper-content">
+
+              <div className={styles.programming}>
+                <h3 className={styles.amPm}>A.M.</h3>
+                {
+                  listShedule && Object.entries(listShedule).map(([key, value], index) => {
+                    if(key.slice(0,2) < 12){
+                      return ( <div key={`am-${index}`} className={styles.blockShedule}>
+                        <div className={styles.timer}>{key}</div>
+                        <div className={styles.title}>
+                          { showSonando ? key.slice(0,2) == days.hours ? 
+                              (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
+                            '': ''
+                          }                      
+                          <p>{value.title}</p>
+                        </div>
+                      </div>
+                      )
+                    }
+                  })
                 }
-              })
-            }
+              </div>
+
+              <div className={styles.programming}>
+                <h3 className={styles.amPm}>P.M.</h3>
+                {
+                  listShedule && Object.entries(listShedule).map(([key, value], index) => {
+                    if(key.slice(0,2) > 11){
+                      return ( <div key={`pm-${index}`} className={styles.blockShedule}>
+                        <div className={styles.timer}>{key}</div>
+                        <div className={styles.title}>
+                          { showSonando ? key.slice(0,2) == days.hours ? 
+                              (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
+                            '': ''
+                          }
+                          <p>{value.title}</p>
+                        </div>
+                      </div>
+                      )
+                    }
+                  })
+                }
+              </div>
+
+            </div>
           </div>
-
         </div>
-
       </div>
     </div>
   )

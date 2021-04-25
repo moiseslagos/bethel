@@ -11,12 +11,15 @@ import styles from 'styles/Home.module.css'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Slider from 'components/Slider'
-import Program from 'components/Program'
 import Frequencies from 'components/Frequencies'
 
-const DynamicComponentWithNoSSR = dynamic(
+const DynamicPlayer = dynamic(
   () => import('components/Player'),
   { ssr: false }
+)
+const DynamicProgram = dynamic(
+  () => import('components/Program'),
+  { ssr:false }
 )
 
 export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
@@ -27,7 +30,7 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <!--player--> */}
-      <DynamicComponentWithNoSSR shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
+      <DynamicPlayer shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
       <div className="wrapper-desktop">
         <div className="main-desk">
@@ -36,7 +39,7 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
             {/* <!--Slider--> */}
             <Slider />
             {/* <!--Slider--> */}
-            <Program programs={dataPrograms}/>
+            <DynamicProgram programs={dataPrograms} />
             <Frequencies frequencies={dataFrequencies} />
           </main>
           <Footer />

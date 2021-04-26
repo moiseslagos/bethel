@@ -5,7 +5,7 @@ import styles from 'styles/components/modal/ModalProgram.module.css'
 
 export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   const formatDay = (day) => {
-    const acentos = { 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u', 'Á':'A', 'É':'E', 'Í':'I', 'Ó':'O', 'Ú':'U' }
+    const acentos = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u', Á: 'A', É: 'E', Í: 'I', Ó: 'O', Ú: 'U' }
     const daySplit = day.split('').map(letra => acentos[letra] || letra).join('').toString()
     return daySplit.toLowerCase()
   }
@@ -65,12 +65,12 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                 <h3 className={styles.amPm}>A.M.</h3>
                 {
                   listShedule && Object.entries(listShedule).map(([key, value], index) => {
-                    if (key.slice(0, 2) < 12) {
+                    if (Number(key.slice(0, 2)) < 12) {
                       return (
                         <div key={`am-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? key.slice(0, 2) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>
@@ -90,9 +90,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                         <div key={`pm-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? key.slice(0,2) == days.hours ? 
-                              (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                            '': ''
+                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>

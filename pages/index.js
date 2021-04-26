@@ -19,7 +19,7 @@ const DynamicPlayer = dynamic(
 )
 const DynamicProgram = dynamic(
   () => import('components/Program'),
-  { ssr:false }
+  { ssr: false }
 )
 
 export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
@@ -33,17 +33,19 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
       <DynamicPlayer shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
       <div className="wrapper-desktop">
-        <div className="main-desk">
           <Header days={getDate()} shedule={dataShedule} />
           <main className={`${styles.main}`}>
             {/* <!--Slider--> */}
             <Slider />
             {/* <!--Slider--> */}
-            <DynamicProgram programs={dataPrograms} />
-            <Frequencies frequencies={dataFrequencies} />
+            <div className="main-desk">
+              <DynamicProgram programs={dataPrograms} />
+              <Frequencies frequencies={dataFrequencies} />
+            </div>
           </main>
-          <Footer />
-        </div>
+          <div className="main-desk">
+            <Footer />
+          </div>
       </div>
     </div>
   )

@@ -3,40 +3,40 @@ import { useState, useEffect } from 'react'
 import Close from 'components/Icons/Close'
 import styles from 'styles/components/modal/ModalProgram.module.css'
 
-export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
-  const formatDay = (day) =>{
-    const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
-    const daySplit = day.split('').map( letra => acentos[letra] || letra).join('').toString();
-    return daySplit.toLowerCase();
+export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
+  const formatDay = (day) => {
+    const acentos = { 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u', 'Á':'A', 'É':'E', 'Í':'I', 'Ó':'O', 'Ú':'U' }
+    const daySplit = day.split('').map(letra => acentos[letra] || letra).join('').toString()
+    return daySplit.toLowerCase()
   }
   const [showModal, setShowModal] = useState(setModal)
   const [listShedule, setListShedule] = useState(shedule[formatDay(days.day)])
   const [sonando, setSonando] = useState('')
   const [showSonando, setShowSonando] = useState(true)
   const [activeDay, setActiveDay] = useState(days.day)
-  useEffect( ()=>{
+  useEffect(() => {
     setShowModal(setModal)
-    if(days.minuts>0 && days.minuts <30){
+    if (days.minuts > 0 && days.minuts < 30) {
       setSonando('00')
-    }else{
+    } else {
       setSonando('30')
     }
   })
 
-  const handleClickDay = (e)=>{
+  const handleClickDay = (e) => {
     const day = e.toLowerCase()
-    setActiveDay(e);
+    setActiveDay(e)
     setListShedule(shedule[formatDay(day)])
-    if(e=== days.day){
+    if (e === days.day) {
       setShowSonando(true)
-    }else{
+    } else {
       setShowSonando(false)
     }
   }
 
   return (
     <div className={` ${styles.modal} ${showModal ? styles.modalActive : ''} `}>
-      <button onClick={()=>closeModal(false)} className={styles.btnClose}><Close /></button>
+      <button onClick={() => closeModal(false)} className={styles.btnClose}><Close /></button>
 
       <div className="modaBody">
         <div className="wrapper-desktop">
@@ -51,7 +51,7 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
                   days.DAYS.map((value, index) => {
                     return (
                       <li key={index} className={styles.listDaysItem}>
-                        <button type="button" onClick={()=>handleClickDay(value)} className={`${styles.btnListDay} ${activeDay == value ? styles.activeBtnListDay:'' }`}>{value}</button>
+                        <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${activeDay === value ? styles.activeBtnListDay : ''}`}>{value}</button>
                       </li>
                     )
                   })
@@ -65,14 +65,13 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
                 <h3 className={styles.amPm}>A.M.</h3>
                 {
                   listShedule && Object.entries(listShedule).map(([key, value], index) => {
-                    if(key.slice(0,2) < 12){
-                      return ( <div key={`am-${index}`} className={styles.blockShedule}>
+                    if (key.slice(0, 2) < 12) {
+                      return (
+                        <div key={`am-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? key.slice(0,2) == days.hours ? 
-                              (key.slice(3,5) == sonando ) ? <span>¡Sonando!</span> : '' : 
-                            '': ''
-                          }                      
+                          { showSonando ? key.slice(0, 2) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          }
                           <p>{value.title}</p>
                         </div>
                       </div>
@@ -86,8 +85,9 @@ export default function ModalProgram ( {setModal, days, shedule, closeModal} ) {
                 <h3 className={styles.amPm}>P.M.</h3>
                 {
                   listShedule && Object.entries(listShedule).map(([key, value], index) => {
-                    if(key.slice(0,2) > 11){
-                      return ( <div key={`pm-${index}`} className={styles.blockShedule}>
+                    if (key.slice(0, 2) > 11) {
+                      return (
+                        <div key={`pm-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
                           { showSonando ? key.slice(0,2) == days.hours ? 

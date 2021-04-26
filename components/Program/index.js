@@ -7,22 +7,22 @@ import 'node_modules/@splidejs/splide/dist/css/splide.min.css'
 
 export default function Program ({ programs }) {
   const [lists] = useState(programs)
-  useEffect(()=>{
-    new Splide('#splide',{
-      perPage: 8,
-      pagination:false,
+  useEffect(() => {
+    new Splide('#splide', {
+      perPage: 6,
+      pagination: false,
       breakpoints: {
-        '1200': {
+        1200: {
           perPage: 5,
-          gap    : '1rem',
+          gap: '1rem'
         },
-        '480': {
+        480: {
           perPage: 3,
-          gap    : '1rem',
-        },
+          gap: '1rem'
+        }
       }
     }).mount()
-  },[])
+  }, [])
 
   return (
     <section className="blockSection">

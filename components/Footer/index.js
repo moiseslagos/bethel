@@ -16,9 +16,9 @@ export default function Footer () {
         <div className={styles.blockFooter}>
           <h2>Enlaces</h2>
           <ul>
-            <li><a>Bethel Televisión</a></li>
-            <li><a>Impacto Evangelístico</a></li>
-            <li><a>Movimiento Misionero Mundial en Perú</a></li>
+            <li><a href="https://www.betheltv.tv/" target="_blank" rel="noreferrer">Bethel Televisión</a></li>
+            <li><a href="http://impactoevangelistico.net/" target="_blank" rel="noreferrer">Impacto Evangelístico</a></li>
+            <li><a href="http://pe.mmmoficial.org/" target="_blank" rel="noreferrer">Movimiento Misionero Mundial en Perú</a></li>
           </ul>
         </div>
         <div className={styles.blockFooter}>

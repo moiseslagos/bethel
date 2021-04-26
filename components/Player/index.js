@@ -58,7 +58,6 @@ const Player = ({ path, shedule, days }) => {
               listShedule && Object.entries(listShedule).map(([key, value]) => {
                 let title = ''
                 if (Number(key.slice(0, 2)) === days.hours) {
-                  title = value.title
                   if (days.minuts > 0 && days.minuts < 30) {
                     if (key.slice(3, 5) === '00') {
                       title = value.title

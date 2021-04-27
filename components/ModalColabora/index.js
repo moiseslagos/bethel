@@ -22,7 +22,7 @@ export default function ModalColabora ({ setModalColabora, closeModal }) {
 
             <div className="resultProgramming wrapper-content text-center">
               <div className="mb-md">
-                <a href="#">
+                <a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=7V6X6YM882BYQ&source=url" target="_blank" rel="noreferrer">
                   <Image src='/images/paypal.png' alt="Paypal" width={250} height={150} />
                 </a>
               </div>

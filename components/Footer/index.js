@@ -6,7 +6,8 @@ import styles from 'styles/footer/Footer.module.css'
 
 export default function Footer () {
   return (
-    <footer className={`${styles.footer} wrapper-content`}>
+    <footer className="wrapper-content">
+      <div className={styles.footer}>
         <div className={styles.blockFooter}>
           <h2>Bethel Radio</h2>
           <p>Coordinación:</p>
@@ -26,6 +27,11 @@ export default function Footer () {
             <a href="#" target="_blank"><GooglePlay height="51" className={styles.svgStore}/></a>
           </div>
         </div>
+      </div>
+      <div className={styles.devolperby}>
+        Copyright ©️ Asociación Cultural Bethel (ACB) 2021.<br />
+        Desarrollado por <a href="https://www.meappcloud.com/" target="_blank" rel="noreferrer">MeAppCloud.com</a>
+      </div>
     </footer>
   )
 }

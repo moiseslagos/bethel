@@ -1,12 +1,11 @@
 .footer{
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 .footer h2{
-    text-transform: uppercase;
-    font-size: 1.3rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
-
 .blockFooter{
     margin-bottom: 3rem;
     display: block;
@@ -24,6 +23,11 @@
 .svgStore{
     width: 100%;
 }
+.devolperby{
+  text-align: center;
+  font-size: 0.7rem;
+  padding-bottom: 100px;
+}
 @media (min-width: 768px) {
   .footer{
     display: grid;
@@ -34,5 +38,10 @@
   }
   .footer h2{
     font-size: 1rem;
+  }
+  .devolperby{
+    text-align: center;
+    font-size: 0.8rem;
+    padding-bottom: 2rem;
   }
 }

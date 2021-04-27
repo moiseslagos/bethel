@@ -48,6 +48,12 @@
   stroke: black;
 }
 @media (min-width: 768px) {
+  .btn_formWrap{
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    z-index: 3;
+  }
   .btn_form{
     bottom: 0.5rem;
     transition: all ease 400ms;

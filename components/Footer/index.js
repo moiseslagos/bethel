@@ -11,14 +11,12 @@ export default function Footer () {
           <h2>Bethel Radio</h2>
           <p>Coordinación:</p>
           <p>(511) 613-1713 / 613-1701</p>
-          <p><Email /> bethelradio@bethelradio.fm</p>
+          <p><Email /> <a href="mailto:contacto@bethelradio.fm" >contacto@bethelradio.fm</a></p>
         </div>
         <div className={styles.blockFooter}>
           <h2>Enlaces</h2>
           <ul>
             <li><a href="https://www.betheltv.tv/" target="_blank" rel="noreferrer">Bethel Televisión</a></li>
-            <li><a href="http://impactoevangelistico.net/" target="_blank" rel="noreferrer">Impacto Evangelístico</a></li>
-            <li><a href="http://pe.mmmoficial.org/" target="_blank" rel="noreferrer">Movimiento Misionero Mundial en Perú</a></li>
           </ul>
         </div>
         <div className={styles.blockFooter}>

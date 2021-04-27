@@ -1,13 +1,20 @@
 import { useState } from 'react'
 import ModalProgram from 'components/ModalProgram'
+import ModalColabora from 'components/ModalColabora'
 
 import styles from 'styles/header/Header.module.css'
 
 export default function Header ({ days, shedule }) {
   const [showModal, setShowModal] = useState(false)
+  const [showModalColabora, setShowModalColabora] = useState(false)
   const handleShedule = (e) => {
-    setShowModal(!showModal)
-    if (!showModal) {
+    if (e === 'programacion') {
+      setShowModal(!showModal)
+    }
+    if (e === 'colabora') {
+      setShowModalColabora(!showModalColabora)
+    }
+    if (!showModal && !showModalColabora) {
       const scrollY = document.documentElement.style.getPropertyValue('--scroll-y')
       const body = document.body
       body.style.position = 'fixed'
@@ -27,14 +34,16 @@ export default function Header ({ days, shedule }) {
   }
   return (
     <>
-      <ModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={handleShedule} />
+      <ModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={() => { handleShedule('programacion') }} />
+      <ModalColabora setModalColabora={showModalColabora} closeModal={() => { handleShedule('colabora') }}/>
       <header className={styles.header}>
         <div className="logo">
           <img src="/images/logo-bethel.svg" width="83" />
           <h1>Bethel Radio</h1>
         </div>
         <div className={styles.actionTop}>
-          <button onClick={handleShedule} className={styles.btnHeader}>Programación</button>
+          <button onClick={() => { handleShedule('programacion') }} className={styles.btnHeader}>Programación</button>
+          <button onClick={() => { handleShedule('colabora') }} className={styles.btnHeader}>Colabora</button>
         </div>
       </header>
     </>

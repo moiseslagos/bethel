@@ -1,0 +1,100 @@
+.modal{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #212121;
+    padding: 0.5rem 0 5rem 0;
+}
+.modalColaboraActive{
+    animation:activeModalColabora ease 400ms;
+    left: 0%;
+}
+.modalDesactive{
+    animation:desactiveModal ease 400ms;
+}
+@keyframes activeModalColabora {
+    from {left: -100%;}
+    to {left: 0;}
+}
+@keyframes desactiveModal {
+    from {left: 0;}
+    to {left: -100%;}
+}
+.listDaysItem{
+    display: inline-block;
+    padding:0.5rem;
+}
+.btnListDay{
+    display: inline-block;
+    border: 1px solid white;
+    padding:0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+}
+.activeBtnListDay{
+    background: white;
+    color:#212121;
+}
+
+
+.blockShedule{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+.amPm{
+    color: #959498;
+}
+.timer{
+    padding:0 0.5rem 0 0;
+    color: #959498;
+    font-weight: bold;
+    width: 20%;
+    font-size: 1rem;
+}
+.title{
+    background: #2e2e2e;
+    width: 80%;
+    padding:0.5rem 1.5rem;
+    position: relative;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+.title span{
+    position: absolute;
+    top: -10px;
+    height: 20px;
+    right: 0rem;
+    background: white;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    padding:0.1rem 1rem;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+}
+.title p{
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.btnClose{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+    z-index: 10;
+}

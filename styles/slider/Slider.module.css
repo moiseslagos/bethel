@@ -50,3 +50,12 @@
     margin-bottom: 30px;
   }
 }
+@media (min-width: 1200px) {
+  .sliderItemDescription h2{
+    font-size: 2.8rem;
+  }
+  .sliderItemDescription .subTitle{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}

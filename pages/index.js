@@ -12,7 +12,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Slider from 'components/Slider'
 import Frequencies from 'components/Frequencies'
-import Conversation from 'components/Icons/Conversation'
+import Peticiones from 'components/Peticiones'
 
 const DynamicPlayer = dynamic(
   () => import('components/Player'),
@@ -33,7 +33,7 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
       {/* <!--player--> */}
       <DynamicPlayer shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
-      <a href="https://www.google.com/" target="_blank" rel="noreferrer" className="btn_form"><Conversation /></a>
+      <Peticiones />
       <div className="wrapper-desktop">
           <Header days={getDate()} shedule={dataShedule} />
           <main className={`${styles.main}`}>

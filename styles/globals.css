@@ -83,18 +83,7 @@ ul{
   fill: white;
 }
 .text-center{text-align: center;}
-.btn_form{
-  position: fixed;
-  right: 0.5rem;
-  bottom: 70px;
-  height: 50px;
-  width: 50px;
-  background: white;
-  border-radius: 50%;
-  padding: 0.7rem;
-  z-index: 3;
-  box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
-}
+
 @media (min-width: 768px) {
   button{
     cursor: pointer;
@@ -110,7 +99,7 @@ ul{
     width: 80%;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   section.blockSection{
     z-index: 1

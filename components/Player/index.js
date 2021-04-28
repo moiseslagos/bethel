@@ -16,13 +16,16 @@ const Player = ({ path, shedule, days }) => {
   }
   const [play, setPlay] = useState(false)
   const [audio, setAudio] = useState(null)
-  const [listShedule] = useState(shedule[formatDay(days.day)])
+  const [listShedule, setListShedule] = useState(shedule[formatDay(days.day)])
   const [showModalPlayer, setShowModalPlayer] = useState(false)
-  console.log(listShedule)
   useEffect(() => {
     setShowModalPlayer(true)
     setAudio(new Audio(path))
   }, [])
+  useEffect(() => {
+    console.log('render player')
+    setListShedule(shedule[formatDay(days.day)])
+  })
   const handlePlayer = () => {
     audio.onplay = () => {
       setPlay(true)

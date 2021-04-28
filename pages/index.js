@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 
 import { dataPrograms } from 'data/programs'
 import { dataFrequencies } from 'data/frequencies'
@@ -24,6 +25,13 @@ const DynamicProgram = dynamic(
 )
 
 export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
+  const [currentDay, setCurrentDay] = useState(getDate())
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(currentDay)
+      setCurrentDay(getDate())
+    }, 60000)
+  })
   return (
     <div className={styles.container}>
       <Head>
@@ -31,11 +39,11 @@ export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <!--player--> */}
-      <DynamicPlayer shedule={dataShedule} days={getDate()} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
+      <DynamicPlayer shedule={dataShedule} days={currentDay} path="https://tampa.audio-stream.com/proxy/bethelra?mp=/stream"/>
       {/* <!--player--> */}
       <Peticiones />
       <div className="wrapper-desktop">
-          <Header days={getDate()} shedule={dataShedule} />
+          <Header days={currentDay} shedule={dataShedule} />
           <main className={`${styles.main}`}>
             {/* <!--Slider--> */}
             <Slider />

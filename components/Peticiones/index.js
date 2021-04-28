@@ -13,7 +13,7 @@ export default function Peticiones () {
   return (
     <div className={`${styles.btn_formWrap} ${smallPeticion ? styles.btn_formCircle : ''}`}>
       {!smallPeticion && <button onClick={handlerClosePeticion} className={styles.btn_form_close}><Close /></button>}
-      <a href="https://www.google.com/" target="_blank" rel="noreferrer" className={`${styles.btn_form} ${smallPeticion ? styles.btn_formCircle : ''}`}>
+      <a href="https://docs.google.com/forms/d/1fttvHqyDGch3PYqNxlcrlbK3ahH8r67iJyrMK32-cb0/edit" target="_blank" rel="noreferrer" className={`${styles.btn_form} ${smallPeticion ? styles.btn_formCircle : ''}`}>
         <div className={styles.btn_form__icon}>
         <Conversation />
         </div>

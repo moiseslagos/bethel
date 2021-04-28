@@ -58,6 +58,10 @@
     bottom: 0.5rem;
     transition: all ease 400ms;
   }
+  .btn_form:hover .btn_form__title{
+    color: white;
+    transition: all ease 400ms;
+  }
   .btn_form:hover{
     background: #2E2E2E;
     transition: all ease 400ms;

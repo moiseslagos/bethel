@@ -66,7 +66,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                     console.log(value + ' - ' + activeDay)
                     return (
                       <li key={index} className={styles.listDaysItem}>
-                        <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${activeDay === value ? styles.activeBtnListDay : ''}`}>{value}</button>
+                        <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${activeDay === value ? styles.activeBtnListDay : ''}`}>{value} - {activeDay}</button>
                       </li>
                     )
                   })

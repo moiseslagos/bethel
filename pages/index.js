@@ -23,6 +23,7 @@ const DynamicProgram = dynamic(
   () => import('components/Program'),
   { ssr: false }
 )
+console.log('index date: ', getDate())
 
 export default function Home ({ dataPrograms, dataFrequencies, dataShedule }) {
   const [currentDay, setCurrentDay] = useState(getDate())

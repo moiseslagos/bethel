@@ -49,6 +49,8 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
               <ul>
                 {
                   days.DAYS.map((value, index) => {
+                    console.log(value)
+                    console.log(activeDay)
                     return (
                       <li key={index} className={styles.listDaysItem}>
                         <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${activeDay === value ? styles.activeBtnListDay : ''}`}>{value}</button>

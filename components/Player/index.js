@@ -7,6 +7,7 @@ import Facebook from 'components/Icons/Facebook'
 import Twitter from 'components/Icons/Twitter'
 
 import styles from 'styles/player/Player.module.css'
+import Instagram from 'components/Icons/Instagram'
 
 const Player = ({ path, shedule, days }) => {
   const formatDay = (day) => {
@@ -23,7 +24,6 @@ const Player = ({ path, shedule, days }) => {
     setAudio(new Audio(path))
   }, [])
   useEffect(() => {
-    console.log('render player')
     setListShedule(shedule[formatDay(days.day)])
   })
   const handlePlayer = () => {
@@ -54,6 +54,7 @@ const Player = ({ path, shedule, days }) => {
         <div className={styles.playerSocial}>
           <a href="https://www.facebook.com/bethelradio/" target="_blank" rel="noreferrer"><Facebook height="15" /></a>
           <a href="https://twitter.com/bethelradio?lang=es" target="_blank" rel="noreferrer"><Twitter height="15" /></a>
+          <a href="https://www.instagram.com/bethel_radio/" target="_blank" rel="noreferrer"><Instagram height="15" /></a>
         </div>
         <div className={styles.playerProgram}>
           <div className={styles.playerProgramTitle}>

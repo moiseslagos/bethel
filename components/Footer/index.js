@@ -11,7 +11,7 @@ export default function Footer () {
         <div className={styles.blockFooter}>
           <h2>Bethel Radio</h2>
           <p>Coordinación:</p>
-          <p>(511) 613-1713 / 613-1701</p>
+          <p>(511) 950 180 435</p>
           <p><Email /> <a href="mailto:contacto@bethelradio.fm" >contacto@bethelradio.fm</a></p>
         </div>
         <div className={styles.blockFooter}>

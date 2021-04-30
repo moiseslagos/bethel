@@ -16,7 +16,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     listShedule: shedule[formatDay(days.day)],
     sonando: ''
   })
-  console.log(activeDay)
+  console.log(days.day)
   useEffect(() => {
     if (days.minuts > 0 && days.minuts < 30) {
       setModalProgram({
@@ -66,7 +66,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                     console.log(value + ' - ' + activeDay)
                     return (
                       <li key={index} className={styles.listDaysItem}>
-                        <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${'Jueves' === value ? styles.activeBtnListDay : ''}`}>{value}</button>
+                        <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${(activeDay === value) ? styles.activeBtnListDay : ''}`}>{value}</button>
                       </li>
                     )
                   })

@@ -9,24 +9,38 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     const daySplit = day.split('').map(letra => acentos[letra] || letra).join('').toString()
     return daySplit.toLowerCase()
   }
-  const [showModal, setShowModal] = useState(setModal)
-  const [listShedule, setListShedule] = useState(shedule[formatDay(days.day)])
-  const [sonando, setSonando] = useState('')
   const [showSonando, setShowSonando] = useState(true)
   const [activeDay, setActiveDay] = useState(days.day)
-  useEffect(() => {
-    setShowModal(setModal)
-    if (days.minuts > 0 && days.minuts < 30) {
-      setSonando('00')
-    } else {
-      setSonando('30')
-    }
+  const [modalProgram, setModalProgram] = useState({
+    showModal: setModal,
+    listShedule: shedule[formatDay(days.day)],
+    sonando: ''
   })
+  useEffect(() => {
+    if (days.minuts > 0 && days.minuts < 30) {
+      setModalProgram({
+        showModal: setModal,
+        listShedule: shedule[formatDay(days.day)],
+        sonando: '00'
+      })
+    } else {
+      setModalProgram({
+        showModal: setModal,
+        listShedule: shedule[formatDay(days.day)],
+        sonando: '30'
+      })
+    }
+    console.log(modalProgram)
+  }, [setModal])
 
   const handleClickDay = (e) => {
     const day = e.toLowerCase()
     setActiveDay(e)
-    setListShedule(shedule[formatDay(day)])
+    setModalProgram({
+      showModal: setModal,
+      listShedule: shedule[formatDay(day)],
+      sonando: '00'
+    })
     if (e === days.day) {
       setShowSonando(true)
     } else {
@@ -35,7 +49,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   }
 
   return (
-    <div className={` ${styles.modal} ${showModal ? styles.modalActive : ''} `}>
+    <div className={` ${styles.modal} ${modalProgram.showModal ? styles.modalActive : ''} `}>
       <button onClick={() => closeModal(false)} className={styles.btnClose}><Close /></button>
 
       <div className="modaBody">
@@ -49,8 +63,6 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
               <ul>
                 {
                   days.DAYS.map((value, index) => {
-                    console.log(value)
-                    console.log(activeDay)
                     return (
                       <li key={index} className={styles.listDaysItem}>
                         <button type="button" onClick={() => handleClickDay(value)} className={`${styles.btnListDay} ${activeDay === value ? styles.activeBtnListDay : ''}`}>{value}</button>
@@ -66,13 +78,13 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
               <div className={styles.programming}>
                 <h3 className={styles.amPm}>A.M.</h3>
                 {
-                  listShedule && Object.entries(listShedule).map(([key, value], index) => {
+                  modalProgram.listShedule && Object.entries(modalProgram.listShedule).map(([key, value], index) => {
                     if (Number(key.slice(0, 2)) < 12) {
                       return (
                         <div key={`am-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>
@@ -86,13 +98,13 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
               <div className={styles.programming}>
                 <h3 className={styles.amPm}>P.M.</h3>
                 {
-                  listShedule && Object.entries(listShedule).map(([key, value], index) => {
+                  modalProgram.listShedule && Object.entries(modalProgram.listShedule).map(([key, value], index) => {
                     if (key.slice(0, 2) > 11) {
                       return (
                         <div key={`pm-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>

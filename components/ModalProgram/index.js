@@ -12,6 +12,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   const [showSonando, setShowSonando] = useState(true)
   const [activeDay, setActiveDay] = useState(days.day)
   const [modalProgram, setModalProgram] = useState({
+    days: days.DAYS,
     showModal: setModal,
     listShedule: shedule[formatDay(days.day)],
     sonando: ''
@@ -19,12 +20,14 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   useEffect(() => {
     if (days.minuts > 0 && days.minuts < 30) {
       setModalProgram({
+        days: days.DAYS,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '00'
       })
     } else {
       setModalProgram({
+        days: days.DAYS,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '30'
@@ -61,7 +64,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
             <div className="auto-scroll">
               <ul>
                 {
-                  days.DAYS.map((value, index) => {
+                  modalProgram.days.map((value, index) => {
                     return (
                       <li key={index} className={styles.listDaysItem}>
                         <button type="button" onClick={() => handleClickDay(value)} className={`${(activeDay == value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>

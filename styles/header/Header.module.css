@@ -23,6 +23,9 @@
     position: relative;
     outline: none;
     padding:0.3rem;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
 }
 .btnHeader::after{
     content: "";

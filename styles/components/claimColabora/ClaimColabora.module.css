@@ -1,0 +1,22 @@
+.wrapperColabora{
+  background:url('/images/slide/bg-colabora-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+.wrapperColabora h3{
+  padding-right: 20%;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .wrapperColabora{
+    height: 300px;
+  }
+  .wrapperColabora h3{
+    font-size: 2rem;
+  }
+}

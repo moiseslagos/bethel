@@ -39,6 +39,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     const day = e.toLowerCase()
     setActiveDay(e)
     setModalProgram({
+      days: days.DAYS,
       showModal: setModal,
       listShedule: shedule[formatDay(day)],
       sonando: '00'
@@ -67,7 +68,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                   modalProgram.days.map((value, index) => {
                     return (
                       <li key={index} className={styles.listDaysItem}>
-                        <button type="button" onClick={() => handleClickDay(value)} className={`${(activeDay == value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>
+                        <button type="button" onClick={() => handleClickDay(value)} className={`${(activeDay === value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>
                       </li>
                     )
                   })

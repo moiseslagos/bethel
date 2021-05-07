@@ -22,10 +22,8 @@ const Player = ({ path, shedule, days }) => {
   useEffect(() => {
     setShowModalPlayer(true)
     setAudio(new Audio(path))
-  }, [])
-  useEffect(() => {
     setListShedule(shedule[formatDay(days.day)])
-  })
+  }, [listShedule])
   const handlePlayer = () => {
     audio.onplay = () => {
       setPlay(true)

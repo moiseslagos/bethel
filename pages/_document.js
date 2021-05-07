@@ -15,15 +15,16 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet" />
           <meta name="theme-color" content="#ffffff" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script async src="https://www.google-analytics.com/ga.js" />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', '${GA_TRACKING_ID}']);
-                _gaq.push(['_trackPageview']);
-
-
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
                 `
             }}
           />

@@ -42,7 +42,24 @@
     z-index: 1;
 }
 
+.titleColabora span{
+  display: inline-block;
+  padding: 0.4rem 1rem;
+}
+.titleColabora .color1{
+  background: #F9BF00;
+  color: white;
+}
+.titleColabora .color2{
+  background: #46D3F9;
+  color: white;
+}
+
 @media (min-width: 768px) {
+  .sliderItemColabora{
+    padding-top: 26%;
+  }
+  
   .sliderItemDescription h2{
     font-size: 1.8rem;
   }
@@ -57,5 +74,9 @@
   .sliderItemDescription .subTitle{
     font-size: 1.2rem;
     line-height: 1.8rem;
+  }
+  .subTitleColabora{
+    font-size: 2rem!important;
+    line-height: 2.4rem!important;
   }
 }

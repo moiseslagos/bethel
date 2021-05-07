@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Link from 'next/link'
+
 import ModalProgram from 'components/ModalProgram'
 import ModalColabora from 'components/ModalColabora'
 
@@ -39,13 +41,17 @@ export default function Header ({ days, shedule }) {
       <ModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={() => { handleShedule('programacion') }} />
       <ModalColabora setModalColabora={showModalColabora} closeModal={() => { handleShedule('colabora') }}/>
       <header className={styles.header}>
-        <div className="logo">
-          <img src="/images/logo-bethel.svg" width="83" />
-          <h1>Bethel Radio</h1>
-        </div>
+        <Link href={'/'}>
+          <div className="logo">
+            <img src="/images/logo-bethel.svg" width="83" />
+            <h1>Bethel Radio</h1>
+          </div>
+        </Link>
         <div className={styles.actionTop}>
           <button onClick={() => { handleShedule('programacion') }} className={styles.btnHeader}>Programación</button>
-          <button onClick={() => { handleShedule('colabora') }} className={styles.btnHeader}>Colabora</button>
+          <Link href={'/colabora'}>
+            <a className={styles.btnHeader}>Colabora</a>
+          </Link>
         </div>
       </header>
     </>

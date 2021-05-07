@@ -23,8 +23,8 @@ export default function Footer () {
         <div className={styles.blockFooter}>
           <h2>Descargar Gratis</h2>
           <div className="grid-2 storeSvg">
-            <a href="#" target="_blank"><AppStore height="51" className={styles.svgStore}/></a>
-            <a href="#" target="_blank"><GooglePlay height="51" className={styles.svgStore}/></a>
+            <a href="https://apps.apple.com/sv/app/bethel-plus/id1495635083" target="_blank" rel="noreferrer"><AppStore height="51" className={styles.svgStore}/></a>
+            <a href="https://play.google.com/store/apps/details?id=com.streann.bethel_tv&hl=es_419&gl=US" target="_blank" rel="noreferrer"><GooglePlay height="51" className={styles.svgStore}/></a>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import styles from 'styles/components/videoColabora/videoColabora.module.css';
+import styles from 'styles/components/videoColabora/videoColabora.module.css'
 export default function VideoColabora () {
   return (
     <div className={styles.wrapperVideo}>

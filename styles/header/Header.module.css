@@ -12,6 +12,7 @@
 }
 .logoHeader{
   cursor: pointer;
+  display: inline-flex;
 }
 .actionTop{
     position: absolute;

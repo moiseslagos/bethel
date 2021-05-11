@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
-
-import ModalProgram from 'components/ModalProgram'
-import ModalColabora from 'components/ModalColabora'
 
 import styles from 'styles/header/Header.module.css'
 
+const DynamicModalProgram = dynamic(
+  () => import('components/ModalProgram'), { ssr: false }
+)
 export default function Header ({ days, shedule }) {
   const [showModal, setShowModal] = useState(false)
   const [showModalColabora, setShowModalColabora] = useState(false)
@@ -38,8 +39,7 @@ export default function Header ({ days, shedule }) {
   }
   return (
     <>
-      <ModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={() => { handleShedule('programacion') }} />
-      <ModalColabora setModalColabora={showModalColabora} closeModal={() => { handleShedule('colabora') }}/>
+      <DynamicModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={() => { handleShedule('programacion') }} />
       <header className={styles.header}>
         <Link href={'/'}>
           <div className="logo">

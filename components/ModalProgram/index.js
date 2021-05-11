@@ -18,7 +18,6 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     sonando: ''
   })
   useEffect(() => {
-    console.log(modalProgram);
     if (days.minuts > 0 && days.minuts < 30) {
       setModalProgram({
         days: days.DAYS,
@@ -42,6 +41,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     const day = e.toLowerCase()
     setModalProgram({
       days: days.DAYS,
+      activeDay: days.day,
       showModal: setModal,
       listShedule: shedule[formatDay(day)],
       sonando: '00'

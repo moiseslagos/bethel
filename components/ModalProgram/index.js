@@ -10,9 +10,9 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     return daySplit.toLowerCase()
   }
   const [showSonando, setShowSonando] = useState(true)
-  const [activeDay, setActiveDay] = useState(days.day)
   const [modalProgram, setModalProgram] = useState({
     days: days.DAYS,
+    activeDay: days.day,
     showModal: setModal,
     listShedule: shedule[formatDay(days.day)],
     sonando: ''
@@ -21,6 +21,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     if (days.minuts > 0 && days.minuts < 30) {
       setModalProgram({
         days: days.DAYS,
+        activeDay: days.day,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '00'
@@ -28,6 +29,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     } else {
       setModalProgram({
         days: days.DAYS,
+        activeDay: days.day,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '30'
@@ -37,7 +39,6 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
 
   const handleClickDay = (e) => {
     const day = e.toLowerCase()
-    setActiveDay(e)
     setModalProgram({
       days: days.DAYS,
       showModal: setModal,
@@ -68,7 +69,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                   modalProgram.days.map((value, index) => {
                     return (
                       <li key={index} className={styles.listDaysItem}>
-                        <button type="button" onClick={() => handleClickDay(value)} className={`${(activeDay === value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>
+                        <button type="button" onClick={() => handleClickDay(value)} className={`${(modalProgram.activeDay === value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>
                       </li>
                     )
                   })

@@ -6,6 +6,9 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="description" content="Llevamos cultura, educación y la Palabra de Dios a todo el Perú y el mundo. Tenemos una variada programación para toda la familia: mensajes de edificación, música, información y cultura." />
+          <link rel="image_src" type="image/jpeg" href="/images/imagen-default-bethel.jpg"></link>
+          <meta name="keywords" content="bethel radio, bethel radio en vivo, bethel radio musica para el alma, bethel radio señal en vivo, bethel radio fm vivo, descargar musica de bethel radio, bethel radio peru, musica para el alma, bethel radio facebook, bethel radio peticiones, musica cristiana, radio cristiana, radio cristiana en vivo, radio cristiana peru, radio cristiana juvenil, radio cristiana online, escuchar radio cristiana en vivo por internet, radio cristiana en peru, radio cristiana lima fm, musica cristiana, musica cristiana de adoracion, musica cristiana para niños, musica cristiana instrumental, musica cristiana para jovenes, descargar musica cristiana, musica cristiana mmm, musica cristiana gratis, musica cristiana instrumental para adorar, musica cristiana bethel, musica cristiana peruana" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

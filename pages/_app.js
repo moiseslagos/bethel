@@ -19,7 +19,7 @@ function MyApp ({ Component, pageProps }) {
   }, [router.events])
   return (
     <>
-      <DefaultLayouts title="Bethel Radio">
+      <DefaultLayouts title="Bethel Radio, nos une">
         <Head>
           <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         </Head>

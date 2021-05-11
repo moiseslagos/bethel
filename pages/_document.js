@@ -7,13 +7,13 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="description" content="Llevamos cultura, educación y la Palabra de Dios a todo el Perú y el mundo. Tenemos una variada programación para toda la familia: mensajes de edificación, música, información y cultura." />
-          <link rel="image_src" type="image/jpeg" href="https://bethel.vercel.app/images/imagen-default-bethel.jpg"></link>
+          <link rel="image_src" type="image/jpeg" href="https://bethel.vercel.app/imagen-default-bethel.jpg"></link>
           <meta property="fb:app_id" content="276457515870586"/>
           <meta property="og:title" content="Bethel Radio, nos une" />
           <meta property="og:url" content="https://bethelradio.fm/" />
           <meta property="og:description" content="Llevamos cultura, educación y la Palabra de Dios a todo el Perú y el mundo. Tenemos una variada programación para toda la familia: mensajes de edificación, música, información y cultura." />
           <meta property="og:site_name" content="Bethel radio" />
-          <meta property="og:image" content="https://bethel.vercel.app/images/imagen-default-bethel.jpg" />
+          <meta property="og:image" content="https://bethel.vercel.app/imagen-default-bethel.jpg" />
           <meta name="robots" content="max-image-preview:large" />
           <meta name="keywords" content="bethel radio, bethel radio en vivo, bethel radio musica para el alma, bethel radio señal en vivo, bethel radio fm vivo, descargar musica de bethel radio, bethel radio peru, musica para el alma, bethel radio facebook, bethel radio peticiones, musica cristiana, radio cristiana, radio cristiana en vivo, radio cristiana peru, radio cristiana juvenil, radio cristiana online, escuchar radio cristiana en vivo por internet, radio cristiana en peru, radio cristiana lima fm, musica cristiana, musica cristiana de adoracion, musica cristiana para niños, musica cristiana instrumental, musica cristiana para jovenes, descargar musica cristiana, musica cristiana mmm, musica cristiana gratis, musica cristiana instrumental para adorar, musica cristiana bethel, musica cristiana peruana" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

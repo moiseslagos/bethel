@@ -42,7 +42,7 @@ export default function Header ({ days, shedule }) {
       <DynamicModalProgram setModal={showModal} days={days} shedule={shedule} closeModal={() => { handleShedule('programacion') }} />
       <header className={styles.header}>
         <Link href={'/'}>
-          <div className="logo">
+          <div className={styles.logoHeader}>
             <img src="/images/logo-bethel.svg" width="83" />
             <h1>Bethel Radio</h1>
           </div>

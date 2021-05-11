@@ -12,8 +12,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   const [showSonando, setShowSonando] = useState(true)
   const [activeDay, setActiveDay] = useState(days.day)
   const [modalProgram, setModalProgram] = useState({
-    days: days.DAYS,
-    activeDay: days.day,
+    days: days,
     showModal: setModal,
     listShedule: shedule[formatDay(days.day)],
     sonando: ''
@@ -21,14 +20,14 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
   useEffect(() => {
     if (days.minuts > 0 && days.minuts < 30) {
       setModalProgram({
-        days: days.DAYS,
+        days: days,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '00'
       })
     } else {
       setModalProgram({
-        days: days.DAYS,
+        days: days,
         showModal: setModal,
         listShedule: shedule[formatDay(days.day)],
         sonando: '30'
@@ -40,7 +39,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
     const day = e.toLowerCase()
     setActiveDay(e)
     setModalProgram({
-      days: days.DAYS,
+      days: days,
       showModal: setModal,
       listShedule: shedule[formatDay(day)],
       sonando: '00'
@@ -66,7 +65,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
             <div className="auto-scroll">
               <ul>
                 {
-                  modalProgram.days.map((value, index) => {
+                  modalProgram.days.DAYS.map((value, index) => {
                     return (
                       <li key={index} className={styles.listDaysItem}>
                         <button type="button" onClick={() => handleClickDay(value)} className={`${(activeDay === value) ? styles.activeBtnListDay : ''} ${styles.btnListDay}`}>{value}</button>
@@ -88,7 +87,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                         <div key={`am-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          { showSonando ? Number(key.slice(0, 2)) === modalProgram.days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>
@@ -108,7 +107,7 @@ export default function ModalProgram ({ setModal, days, shedule, closeModal }) {
                         <div key={`pm-${index}`} className={styles.blockShedule}>
                         <div className={styles.timer}>{key}</div>
                         <div className={styles.title}>
-                          { showSonando ? Number(key.slice(0, 2)) === days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
+                          { showSonando ? Number(key.slice(0, 2)) === modalProgram.days.hours ? (key.slice(3, 5) === modalProgram.sonando) ? <span>¡Sonando!</span> : '' : '' : ''
                           }
                           <p>{value.title}</p>
                         </div>

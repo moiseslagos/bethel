@@ -5,6 +5,7 @@
 }
 .itemBank{
   margin-bottom: 1rem;
+  display: block;
 }
 .bankName{
   width: 100%;

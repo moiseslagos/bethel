@@ -55,4 +55,10 @@
     width: 80%;
     transition: all ease 400ms;
   }
+  .logoHeader{
+    width: 106px;
+  }
+  .logoHeader img{
+    width: 100%;
+  }
 }

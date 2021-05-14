@@ -60,11 +60,12 @@
 
 @media (min-width: 768px) {
 	.ModalPlayer{
-		width: 400px;
+		width: 500px;
 	}
 	.modalPlayerFooter{
 		width: 70%;
 		margin: 0 auto;
 		text-align: center;
+		padding-bottom: 2rem;
 	}
 }

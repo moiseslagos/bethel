@@ -4,7 +4,7 @@ export const dataPrograms = [
     title: 'Hogar Dulce Hogar',
     img: 'hogar-dulce-hogar-1-1.jpg',
     img_big: 'hogar-dulce-hogar-16-9.jpg',
-    description: ''
+    description: 'Programa dirigido a la familia cuyo objetivo es fortalecer los lazos fraternos, resaltando la importancia del consejo divino para resolver los diversos problemas que afronta.'
   },
   {
     id: 2,

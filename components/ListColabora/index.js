@@ -5,13 +5,11 @@ export default function ListColabora () {
   return (
     <div className={styles.wrapperListColabora}>
       <div className={`main-desk ${styles.gridColabora}`}>
-        <div className={styles.itemBank}>
+        <a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=7V6X6YM882BYQ&source=url" target="_blank" rel="noreferrer" className={styles.itemBank}>
           <div className={styles.itemListColabora}>
-            <a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=7V6X6YM882BYQ&source=url" target="_blank" rel="noreferrer">
-              <Image src='/images/paypal.png' alt="Paypal" width={150} height={90} />
-            </a>
+            <Image src='/images/paypal.png' alt="Paypal" width={150} height={90} />
           </div>
-        </div>
+        </a>
         <div className="itemBank">
           <div className={styles.itemListColabora}>
             <p>Número de Cuenta: 3004982176</p>
